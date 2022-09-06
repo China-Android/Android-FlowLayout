@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidFlowLayout</string>
+    <declare-styleable name="FlowLayout">
+        <attr name="maxLines" format="integer"/>
+        <attr name="itemHorizontalMargin" format="dimension"/>
+        <attr name="itemVerticalMargin" format="dimension"/>
+        <attr name="textMaxLength" format="integer"/>
+        <attr name="textColor" format="color"/>
+        <attr name="boderColor" format="color"/>
+        <attr name="borderRadio" format="dimension"/>
+    </declare-styleable>
+</resources>
