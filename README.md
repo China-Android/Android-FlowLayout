@@ -8,18 +8,18 @@
 ![image](https://user-images.githubusercontent.com/65054178/188769198-ba297d3b-1d79-4bc1-bfca-474ca9b51bd8.png)
 
 引入方式：
-	'<allprojects {
+	<allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
-	 }>'
+	 }>
    
  <br> dependencies {
 	       <br> implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
 	<br>}
   
   <br>//设置每个条目之间的间距
-  fl_layout.setHorizontalMargin(10);
+   fl_layout.setHorizontalMargin(10);
   <br>//设置每一行之间的间距
   fl_layout.setVerticalMargin(30);
   <br>//设置字体颜色
