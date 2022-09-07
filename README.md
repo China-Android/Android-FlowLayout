@@ -9,30 +9,30 @@
 
 引入方式：
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-		}
-	    }
+	<br>repositories {
+		<br>...
+		<br>maven { url 'https://jitpack.io' }
+		<br>}
+	   <br> }
    
-  dependencies {
-	        implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
-	}
+ <br> dependencies {
+	       <br> implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
+	<br>}
   
   <br>//设置每个条目之间的间距
-  fl_layout.setHorizontalMargin(10);\<br>
+  fl_layout.setHorizontalMargin(10);
   <br>//设置每一行之间的间距
-  fl_layout.setVerticalMargin(30);\<br>
+  fl_layout.setVerticalMargin(30);
   <br>//设置字体颜色
-  fl_layout.setTextColor(R.color.purple_500);\<br>
+  fl_layout.setTextColor(R.color.purple_500);
   <br>//设置列表数据
-  fl_layout.setTextList(list);\<br>
+  fl_layout.setTextList(list);
   <br>//设置每一条最大字显示体个数，超过部分截取不显示
-  fl_layout.setTextMaxLength(10);\<br>
+  fl_layout.setTextMaxLength(10);
   <br>//设置点击事件
   fl_layout.setOnClickItemListener((v, text) -> {
 
-  });\<br>
+  });
   
   <br>对应也可在xml中进行相关属性设置\<br>
   <br>
@@ -40,5 +40,5 @@ allprojects {
   <attr name="itemVerticalMargin" format="dimension"/>
   <attr name="textMaxLength" format="integer"/>
   <attr name="textColor" format="color"/>
-  \<br>
+  
   
