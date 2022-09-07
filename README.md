@@ -3,10 +3,9 @@
 热门标签，搜索记录标签，流式布局，支持最大行数，元素内最大字数的限制，每个条目之间的间距设置，字体颜色，元素边框等，体积小，易上手！！！
 直接上效果
 
+![image](https://user-images.githubusercontent.com/65054178/188781377-f76727d4-8322-4332-b5ae-6dc3216cdde7.png)
+
 ![image](https://user-images.githubusercontent.com/65054178/188769198-ba297d3b-1d79-4bc1-bfca-474ca9b51bd8.png)
-
-![image](https://user-images.githubusercontent.com/65054178/188771688-2f966be5-ade3-4f29-a89f-02aef8d939f9.png)
-
 
 引入方式：
 allprojects {
