@@ -1,5 +1,6 @@
 # Android-SearchFlowLayout
-##Android搜索标签流式布局，支持最大行数，元素内最大字数的限制，每个条目之间的间距设置，字体颜色，元素边框等，体积小，易上手！！！
+##Android
+热门标签，搜索记录标签，流式布局，支持最大行数，元素内最大字数的限制，每个条目之间的间距设置，字体颜色，元素边框等，体积小，易上手！！！
 直接上效果
 
 ![image](https://user-images.githubusercontent.com/65054178/188769198-ba297d3b-1d79-4bc1-bfca-474ca9b51bd8.png)
