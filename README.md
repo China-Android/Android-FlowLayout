@@ -34,11 +34,10 @@ allprojects {
 
   });
   
-  <br>对应也可在xml中进行相关属性设置\<br>
-  <br>
-  <attr name="itemHorizontalMargin" format="dimension"/>
-  <attr name="itemVerticalMargin" format="dimension"/>
-  <attr name="textMaxLength" format="integer"/>
-  <attr name="textColor" format="color"/>
+  <br>对应也可在xml中进行相关属性设置
+  <br>itemHorizontalMargin
+  <br>itemVerticalMargin
+  <br>textMaxLength
+  <br>textColor
   
   
