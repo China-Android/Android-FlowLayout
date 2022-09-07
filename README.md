@@ -12,28 +12,42 @@
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
-	 }</code></pre>
+	 }
    
- '''dependencies {
+dependencies {
 	        implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
-	}'''
+	}</code></pre>
   
   <br>//设置每个条目之间的间距
+  <pre><code>
    fl_layout.setHorizontalMargin(10);
+   </code></pre>
   <br>//设置每一行之间的间距
+  <pre><code>
   fl_layout.setVerticalMargin(30);
+     </code></pre>
   <br>//设置字体颜色
+    <pre><code>
   fl_layout.setTextColor(R.color.purple_500);
+   </code></pre>
   <br>//设置列表数据
+    <pre><code>
   fl_layout.setTextList(list);
+   </code></pre>
   <br>//设置每一条最大字显示体个数，超过部分截取不显示
+     <pre><code>
   fl_layout.setTextMaxLength(10);
+   </code></pre>
   <br>//设置文字左面图片
+     <pre><code>
   fl_layout.setTextDrawableLeft(R.drawable.xxx);
+   </code></pre>
   <br>//设置点击事件
+     <pre><code>
   fl_layout.setOnClickItemListener((v, text) -> {
 
   });
+   </code></pre>
   
   <br>对应也可在xml中进行相关属性设置
   <br>itemHorizontalMargin
