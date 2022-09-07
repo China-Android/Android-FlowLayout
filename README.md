@@ -25,29 +25,29 @@ dependencies {
   2.设置每一行之间的间距
   <pre><code>
   fl_layout.setVerticalMargin(30);
-     </code></pre>
+  </code></pre>
   3.设置字体颜色
-    <pre><code>
+  <pre><code>
   fl_layout.setTextColor(R.color.purple_500);
-   </code></pre>
+  </code></pre>
   4.设置每一条最大字显示体个数，超过部分截取不显示
-     <pre><code>
+  <pre><code>
   fl_layout.setTextMaxLength(10);
-   </code></pre>
+  </code></pre>
   5.设置文字左面图片
-     <pre><code>
+  <pre><code>
   fl_layout.setTextDrawableLeft(R.drawable.xxx);
-   </code></pre>
+  </code></pre>
   6.设置列表数据
-    <pre><code>
+  <pre><code>
   fl_layout.setTextList(list);
-   </code></pre>
+  </code></pre>
   7.设置点击事件
-   <pre><code>
+  <pre><code>
   fl_layout.setOnClickItemListener((v, text) -> {
 
   });
-   </code></pre>
+  </code></pre>
  对应也可在xml中进行相关属性设置
  <pre><code>
   itemHorizontalMargin = "10"
