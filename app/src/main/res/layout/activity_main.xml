@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <com.example.androidflowlayoutlibrary.MyFlowLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="300dp"
+        app:textBackground="@drawable/bg_flow_gray"
+        app:textDrawableLeft="@drawable/c"/>
 </LinearLayout>

@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hanlong/AndroidStudioProjects/AndroidFlowLayout/AndroidFlowLayoutLibrary/src/main/res/drawable/bg_flow_gray.xml" value="0.194" />
+        <entry key="..\:/Users/hanlong/AndroidStudioProjects/AndroidFlowLayout/AndroidFlowLayoutLibrary/src/main/res/drawable/bg_flow_gray1.xml" value="0.203" />
         <entry key="..\:/Users/hanlong/AndroidStudioProjects/AndroidFlowLayout/AndroidFlowLayoutLibrary/src/main/res/layout/item_flow_text.xml" value="0.278636543797067" />
         <entry key="..\:/Users/hanlong/AndroidStudioProjects/AndroidFlowLayout/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
       </map>

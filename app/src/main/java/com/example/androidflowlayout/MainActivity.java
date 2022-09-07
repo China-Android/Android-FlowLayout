@@ -3,6 +3,7 @@ package com.example.androidflowlayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.androidflowlayoutlibrary.MyFlowLayout;
 
@@ -30,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         list.add("奇异果");
         list.add("山东麒麟西瓜");
         list.add("江苏冰糖砂糖橘");
-        fl_layout.setmVerticalMargin(30);
+        fl_layout.setVerticalMargin(30);
+        fl_layout.setTextColor(R.color.purple_500);
+        fl_layout.setHorizontalMargin(10);
         fl_layout.setTextList(list);
+        fl_layout.setOnClickItemListener((v, text) -> {
+
+        });
     }
 }

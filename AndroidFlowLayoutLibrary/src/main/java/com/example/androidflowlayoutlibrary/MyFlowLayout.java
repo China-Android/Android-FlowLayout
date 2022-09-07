@@ -2,6 +2,7 @@ package com.example.androidflowlayoutlibrary;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -9,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,8 @@ public class MyFlowLayout extends ViewGroup {
     private int mBorderColor;
     private int mTextMaxLength;
     private float mBorderRadius;
+    private int textBackground;
+    private int textDrawableLeft;
     private List<String> mData = new ArrayList<>();
     private List<List<View>> mLines = new ArrayList<>();//代表我们的行
 
@@ -57,12 +62,14 @@ public class MyFlowLayout extends ViewGroup {
         mHorizontalMargin = a.getDimension(R.styleable.FlowLayout_itemHorizontalMargin, DEFAULT_HORIZONTAL_MARGIN);
         mVerticalMargin = a.getDimension(R.styleable.FlowLayout_itemVerticalMargin, DEFAULT_VERTICAL_MARGIN);
         mTextMaxLength = a.getInt(R.styleable.FlowLayout_textMaxLength, DEFAULT_TEXT_MAX_LENGTH);
+        textBackground = a.getResourceId(R.styleable.FlowLayout_textBackground,0);
+        textDrawableLeft = a.getResourceId(R.styleable.FlowLayout_textDrawableLeft,0);
         if (mTextMaxLength < 1 && mTextMaxLength != DEFAULT_TEXT_MAX_LENGTH) {
             throw new IllegalArgumentException("字数不能小于0");
         }
         mTextColor = a.getColor(R.styleable.FlowLayout_textColor, getResources().getColor(R.color.text_grey));
-        mBorderColor = a.getColor(R.styleable.FlowLayout_boderColor, getResources().getColor(R.color.text_grey));
-        mBorderRadius = a.getDimension(R.styleable.FlowLayout_borderRadio, DEFAULT_BORDER_RADIUS);
+//        mBorderColor = a.getColor(R.styleable.FlowLayout_boderColor, getResources().getColor(R.color.text_grey));
+//        mBorderRadius = a.getDimension(R.styleable.FlowLayout_borderRadio, DEFAULT_BORDER_RADIUS);
         a.recycle();
     }
 
@@ -180,6 +187,19 @@ public class MyFlowLayout extends ViewGroup {
         //添加子View进来
         for (final String datum : mData) {
             TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.item_flow_text, this, false);
+            if (mTextColor>0){
+                textView.setTextColor(mTextColor);
+            }
+            if (textBackground>0){
+                textView.setBackgroundResource(textBackground);
+            }
+
+            if (textDrawableLeft>0){
+                Drawable drawable = ContextCompat.getDrawable(getContext(),textDrawableLeft);
+                drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());//设置drawable显示在（left, top) 和（right, bottom)构成的矩形中
+                textView.setCompoundDrawablePadding(10);
+                textView.setCompoundDrawables(drawable,null,null,null);
+            }
             if (mTextMaxLength != DEFAULT_TEXT_MAX_LENGTH) {
                 //设置TextView的最长内容
                 textView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(mTextMaxLength)});
@@ -188,8 +208,8 @@ public class MyFlowLayout extends ViewGroup {
             textView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mOnClickItemListenr != null)
-                        mOnClickItemListenr.onItemClick(v, datum);
+                    if (mOnClickItemListener != null)
+                        mOnClickItemListener.onItemClick(v, datum);
                 }
             });
             //设置子View的相关属性....
@@ -197,61 +217,117 @@ public class MyFlowLayout extends ViewGroup {
         }
     }
 
-    private OnClickItemListenr mOnClickItemListenr;
+    private OnClickItemListener mOnClickItemListener;
 
-    public void setOnClickItemListenr(OnClickItemListenr listenr) {
-        this.mOnClickItemListenr = listenr;
+    /**
+     * 设置每个条目的点击事件
+     * @param listener
+     */
+    public void setOnClickItemListener(OnClickItemListener listener) {
+        this.mOnClickItemListener = listener;
     }
 
-    public interface OnClickItemListenr {
+    public interface OnClickItemListener {
         void onItemClick(View v, String text);
     }
 
-    public int getmMaxLines() {
+    /**
+     * 获取显示控件的最大行数
+     * @return
+     */
+    public int getMaxLines() {
         return mMaxLines;
     }
 
-    public void setmMaxLines(int mMaxLines) {
+    /**
+     * 设置显示控件的最大行数
+     * @param mMaxLines
+     */
+    public void setMaxLines(int mMaxLines) {
         this.mMaxLines = mMaxLines;
     }
 
-    public float getmHorizontalMargin() {
+    /**
+     * 获取每个条目之间的间距
+     */
+    public float getHorizontalMargin() {
         return mHorizontalMargin;
     }
 
-    public void setmHorizontalMargin(float mHorizontalMargin) {
+    /**
+     * 设置每个条目之间的间距
+     * @param mHorizontalMargin
+     */
+    public void setHorizontalMargin(float mHorizontalMargin) {
         this.mHorizontalMargin = mHorizontalMargin;
     }
 
-    public float getmVerticalMargin() {
+    /**
+     * 获取每行之间的上下间距
+     * @return
+     */
+    public float getVerticalMargin() {
         return mVerticalMargin;
     }
 
-    public void setmVerticalMargin(float mVerticalMargin) {
+    /**
+     * 设置每行之间的上下间距
+     * @param mVerticalMargin
+     */
+    public void setVerticalMargin(float mVerticalMargin) {
         this.mVerticalMargin = mVerticalMargin;
     }
 
-    public int getmTextColor() {
+    /**
+     * 获取字体颜色
+     * @return
+     */
+    public int getTextColor() {
         return mTextColor;
     }
 
-    public void setmTextColor(int mTextColor) {
+    /**
+     * 设置字体颜色
+     * @param mTextColor
+     */
+    public void setTextColor(int mTextColor) {
         this.mTextColor = mTextColor;
     }
 
-    public int getmBorderColor() {
-        return mBorderColor;
+
+    public int getTextMaxLength() {
+        return mTextMaxLength;
     }
 
-    public void setmBorderColor(int mBorderColor) {
-        this.mBorderColor = mBorderColor;
+    /**
+     * 字体最大长度
+     * @param mTextMaxLength
+     */
+    public void setTextMaxLength(int mTextMaxLength) {
+        this.mTextMaxLength = mTextMaxLength;
     }
 
-    public float getmBorderRadius() {
-        return mBorderRadius;
+    public int getTextBackground() {
+        return textBackground;
     }
 
-    public void setmBorderRadius(float mBorderRadius) {
-        this.mBorderRadius = mBorderRadius;
+    /**
+     * 设置条目背景
+     * @param textBackground
+     */
+    public void setTextBackground(int textBackground) {
+        this.textBackground = textBackground;
+    }
+
+    public int getTextDrawableLeft() {
+        return textDrawableLeft;
+    }
+
+    /**
+     * 设置文字左面图片
+     * @param textDrawableLeft
+     */
+    public void setTextDrawableLeft(int textDrawableLeft) {
+        this.textDrawableLeft = textDrawableLeft;
     }
 }
