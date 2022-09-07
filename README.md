@@ -8,11 +8,11 @@
 ![image](https://user-images.githubusercontent.com/65054178/188769198-ba297d3b-1d79-4bc1-bfca-474ca9b51bd8.png)
 
 引入方式：
-	<allprojects {
+	'<allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
-	 }>
+	 }>'
    
  <br> dependencies {
 	       <br> implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
