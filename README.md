@@ -28,34 +28,34 @@ dependencies {
   <pre><code>
   fl_layout.setVerticalMargin(30);
      </code></pre>
-  <br>//设置字体颜色
+  //设置字体颜色
     <pre><code>
   fl_layout.setTextColor(R.color.purple_500);
    </code></pre>
-  <br>//设置列表数据
+  //设置列表数据
     <pre><code>
   fl_layout.setTextList(list);
    </code></pre>
-  <br>//设置每一条最大字显示体个数，超过部分截取不显示
+  //设置每一条最大字显示体个数，超过部分截取不显示
      <pre><code>
   fl_layout.setTextMaxLength(10);
    </code></pre>
-  <br>//设置文字左面图片
+  //设置文字左面图片
      <pre><code>
   fl_layout.setTextDrawableLeft(R.drawable.xxx);
    </code></pre>
-  <br>//设置点击事件
-     <pre><code>
+  //设置点击事件
+   <pre><code>
   fl_layout.setOnClickItemListener((v, text) -> {
 
   });
    </code></pre>
-  
-  <br>对应也可在xml中进行相关属性设置
-  <br>itemHorizontalMargin
-  <br>itemVerticalMargin
-  <br>textMaxLength
-  <br>textColor
-  <br>textDrawableLeft="@drawable/c"
-  
+ 对应也可在xml中进行相关属性设置
+ <pre><code>
+  itemHorizontalMargin = "10"
+  itemVerticalMargin = "10"
+  textMaxLength = "3"
+  textColor = "@color/xxx"
+  textDrawableLeft="@drawable/c"
+ </code></pre>
   
