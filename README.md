@@ -14,8 +14,8 @@ dependencies {
 	        implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
 	     }
 </code></pre>
-![a](https://user-images.githubusercontent.com/65054178/189288279-ffa15674-0045-4895-b540-ae536a294843.png)
-  ![b](https://user-images.githubusercontent.com/65054178/189288271-9d9199a4-e19b-4aee-9333-65abecb1c464.png)
+![b](https://user-images.githubusercontent.com/65054178/189288873-9cc41b62-2ab0-46c4-aae6-123c08e7cac9.png)
+![a](https://user-images.githubusercontent.com/65054178/189288876-b1dc4868-b213-4b81-81c9-baf31161b42b.png)
 
   1.设置每个条目之间的间距
   <pre><code>
