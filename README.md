@@ -24,7 +24,7 @@ xml引用控件
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:textBackground="@drawable/bg_flow_gray"
-        app:textDrawableLeft="@drawable/a"\>
+        app:textDrawableLeft="@drawable/a"/>
   </code></pre>
   1.设置每个条目之间的间距
   <pre><code>
