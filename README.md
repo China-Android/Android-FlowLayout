@@ -58,7 +58,8 @@ dependencies {
  ## 应用户要求我的流式布局v1.1版本他来了！！！---------------------------------------------------------------------------
  
  # 增加每个条目支持添加不同图片，长按可以删除对应条目
- ![v1 1](https://user-images.githubusercontent.com/65054178/189287992-0488e68c-137c-4cec-a3a7-136a3d2614e1.png)![v1 1_close](https://user-  images.githubusercontent.com/65054178/189287995-2fe6ec6c-f891-40fa-b93e-ff85a80adc81.png)
+ ![v1 1](https://user-images.githubusercontent.com/65054178/189287992-0488e68c-137c-4cec-a3a7-136a3d2614e1.png)
+ ![v1 1_close](https://user-  images.githubusercontent.com/65054178/189287995-2fe6ec6c-f891-40fa-b93e-ff85a80adc81.png)
  <br>
 数据方法有所改变，接收的是一个FlowDataBean类型的数据集合：itemText代表要显示的文字，drawableId代表要显示图片的id
  </br>
