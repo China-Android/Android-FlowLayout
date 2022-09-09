@@ -19,7 +19,7 @@ dependencies {
 
 xml引用控件
  <pre><code>
-     <com.example.androidflowlayoutlibrary.MyFlowLayout
+     /<com.example.androidflowlayoutlibrary.MyFlowLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="300dp"
