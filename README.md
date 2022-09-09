@@ -1,9 +1,6 @@
 # Android-FlowLayout
 ## 热门标签，搜索记录标签，流式布局，动态计算每一条目的宽度，当标签在本行展示不开自动切换到下一行展示。支持最大行数，元素内最大字数的限制，每个条目之间的间距设置，字体颜色，元素背景，元素文字左边图片标头显示等，体积小，易上手！！！直接上效果
 
-![image](https://user-images.githubusercontent.com/65054178/188781377-f76727d4-8322-4332-b5ae-6dc3216cdde7.png)
-
-![image](https://user-images.githubusercontent.com/65054178/188769198-ba297d3b-1d79-4bc1-bfca-474ca9b51bd8.png)
 
 ### 引入方式：
 <pre><code>
@@ -17,7 +14,8 @@ dependencies {
 	        implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
 	     }
 </code></pre>
-  
+  ![b](https://user-images.githubusercontent.com/65054178/189288271-9d9199a4-e19b-4aee-9333-65abecb1c464.png)
+![a](https://user-images.githubusercontent.com/65054178/189288279-ffa15674-0045-4895-b540-ae536a294843.png)
   1.设置每个条目之间的间距
   <pre><code>
    fl_layout.setHorizontalMargin(10);
