@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:ellipsize="end"
-    android:singleLine="true"
-    android:textColor="@color/grey"
-    android:gravity="center"
-    android:background="@drawable/bg_flow_gray">
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_item"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/grey"
+        android:gravity="center"
+        android:background="@drawable/bg_flow_gray"/>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_close"
+        android:layout_gravity="right"
+        android:background="@drawable/close"
+        android:layout_width="15dp"
+        android:layout_height="15dp"/>
+</FrameLayout>
 
-</TextView>
