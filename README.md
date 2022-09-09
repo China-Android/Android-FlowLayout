@@ -14,8 +14,9 @@ dependencies {
 	        implementation 'com.github.China-Android:Android-SearchFlowLayout:1.0'
 	     }
 </code></pre>
-  ![b](https://user-images.githubusercontent.com/65054178/189288271-9d9199a4-e19b-4aee-9333-65abecb1c464.png)
 ![a](https://user-images.githubusercontent.com/65054178/189288279-ffa15674-0045-4895-b540-ae536a294843.png)
+  ![b](https://user-images.githubusercontent.com/65054178/189288271-9d9199a4-e19b-4aee-9333-65abecb1c464.png)
+
   1.设置每个条目之间的间距
   <pre><code>
    fl_layout.setHorizontalMargin(10);
@@ -59,7 +60,7 @@ dependencies {
  
  # 增加每个条目支持添加不同图片，长按可以删除对应条目
  ![v1 1](https://user-images.githubusercontent.com/65054178/189287992-0488e68c-137c-4cec-a3a7-136a3d2614e1.png)
- ![v1 1_close](https://user-  images.githubusercontent.com/65054178/189287995-2fe6ec6c-f891-40fa-b93e-ff85a80adc81.png)
+ ![v1 1_close](https://user-images.githubusercontent.com/65054178/189287995-2fe6ec6c-f891-40fa-b93e-ff85a80adc81.png)
  <br>
 数据方法有所改变，接收的是一个FlowDataBean类型的数据集合：itemText代表要显示的文字，drawableId代表要显示图片的id
  </br>
