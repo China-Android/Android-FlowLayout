@@ -56,4 +56,18 @@ dependencies {
   textColor = "@color/xxx"
   textDrawableLeft="@drawable/c"
  </code></pre>
+ 
+ ## 应用户要求我的流式布局v1.1版本他来了！！！---------------------------------------------------------------------------
+ 
+ # 增加每个条目支持添加不同图片，长按可以删除对应条目
+ <br>
+ 设置数据方法有所改变，接收的是一个FlowDataBean类型的数据集合：itemText代表要显示的文字，drawableId代表要显示图片的id
+ </br>
+ 1.长按删除条目监听
+ <pre><code>
+ fl_layout.setOnClickLongDelItemListener((v, text, pos) -> {
+
+ });
+ </code></pre>
+ *注意当在xml单独设置左面图片时，优先级是大于数据集合中类型所设置图片的优先级。
   
