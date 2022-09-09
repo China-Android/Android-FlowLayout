@@ -19,12 +19,12 @@ dependencies {
 
 xml引用控件
  <pre><code>
-  `<com.example.androidflowlayoutlibrary.MyFlowLayout
+  `<<com.example.androidflowlayoutlibrary.MyFlowLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:textBackground="@drawable/bg_flow_gray"
-        app:textDrawableLeft="@drawable/a" />`
+        app:textDrawableLeft="@drawable/a" />>`
   </code></pre>
   1.设置每个条目之间的间距
   <pre><code>
