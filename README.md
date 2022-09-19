@@ -46,7 +46,11 @@ xml引用控件
   <pre><code>
   fl_layout.setTextDrawableLeft(R.drawable.xxx);
   </code></pre>
-  6.设置列表数据
+  <pre><code>
+  6.设置每一条目的宽高
+  fl_layout.setItemWithAndHeight(120,30);
+  </code></pre>
+  7.设置列表数据
   <pre><code>
   fl_layout.setTextList(list);
   </code></pre>
