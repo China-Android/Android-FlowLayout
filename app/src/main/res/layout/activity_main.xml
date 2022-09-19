@@ -10,5 +10,6 @@
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        app:textBackground="@drawable/bg_flow_gray" />
+        app:textBackground="@drawable/bg_flow_gray"
+        app:textDrawableLeft="@drawable/a" />
 </LinearLayout>

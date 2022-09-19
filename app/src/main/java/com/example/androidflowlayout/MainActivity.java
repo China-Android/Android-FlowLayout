@@ -3,6 +3,7 @@ package com.example.androidflowlayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.androidflowlayoutlibrary.FlowDataBean;
 import com.example.androidflowlayoutlibrary.MyFlowLayout;
@@ -48,8 +49,13 @@ public class MainActivity extends AppCompatActivity {
         fl_layout.setTextColor(R.color.purple_500);
         fl_layout.setHorizontalMargin(10);
         fl_layout.setTextList(list);
+//        fl_layout.setItemWithAndHeight(120,30);
         fl_layout.setOnClickItemListener((v, text,pos) -> {
 
         });
+        fl_layout.setOnClickLongDelItemListener((v, text, pos) -> {
+
+        });
+
     }
 }

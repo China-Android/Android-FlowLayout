@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -37,6 +38,9 @@ public class MyFlowLayout extends ViewGroup {
     private float mBorderRadius;
     private int textBackground;
     private int textDrawableLeft;
+    private int itemWith;
+    private int itemHeight;
+    private Context mContext;
     private List<FlowDataBean> mData = new ArrayList<>();
     private List<List<View>> mLines = new ArrayList<>();//代表我们的行
 
@@ -50,6 +54,7 @@ public class MyFlowLayout extends ViewGroup {
 
     public MyFlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
         DEFAULT_HORIZONTAL_MARGIN = dptopx.dip2px(context, 5f);//元素之间的水平间距
         DEFAULT_VERTICAL_MARGIN = dptopx.dip2px(context, 5f);//元素之间的竖直间距
         DEFAULT_TEXT_MAX_LENGTH = -1;//元素里面的字体长度限制
@@ -65,10 +70,11 @@ public class MyFlowLayout extends ViewGroup {
         mTextMaxLength = a.getInt(R.styleable.FlowLayout_textMaxLength, DEFAULT_TEXT_MAX_LENGTH);
         textBackground = a.getResourceId(R.styleable.FlowLayout_textBackground, 0);
         textDrawableLeft = a.getResourceId(R.styleable.FlowLayout_textDrawableLeft, 0);
+        mTextColor = a.getColor(R.styleable.FlowLayout_textColor, getResources().getColor(R.color.text_grey));
+
         if (mTextMaxLength < 1 && mTextMaxLength != DEFAULT_TEXT_MAX_LENGTH) {
             throw new IllegalArgumentException("字数不能小于0");
         }
-        mTextColor = a.getColor(R.styleable.FlowLayout_textColor, getResources().getColor(R.color.text_grey));
 //        mBorderColor = a.getColor(R.styleable.FlowLayout_boderColor, getResources().getColor(R.color.text_grey));
 //        mBorderRadius = a.getDimension(R.styleable.FlowLayout_borderRadio, DEFAULT_BORDER_RADIUS);
         a.recycle();
@@ -103,6 +109,11 @@ public class MyFlowLayout extends ViewGroup {
         int childHeighSpace = MeasureSpec.makeMeasureSpec(parentHeightsize, MeasureSpec.AT_MOST);
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
+            //设置每一个item的宽高
+            if (itemWith>0&&itemHeight>0){
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(dptopx.dip2px(mContext,itemWith),dptopx.dip2px(mContext,itemHeight));
+                child.setLayoutParams(layoutParams);
+            }
             if (child.getVisibility() != VISIBLE) {
                 continue;
             }
@@ -227,6 +238,14 @@ public class MyFlowLayout extends ViewGroup {
                 //设置TextView的最长内容
                 textView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(mTextMaxLength)});
             }
+
+            if (itemWith>0){
+                textView.setWidth(itemWith);
+            }
+
+            if (itemHeight>0){
+                textView.setWidth(itemHeight);
+            }
             String item = mData.get(i).getItemText();
             textView.setText(item);
 
@@ -243,6 +262,9 @@ public class MyFlowLayout extends ViewGroup {
                 removeAllViews();
                 mData.remove(finalI);
                 setUpChildren();
+                if (mOnClickLongDelItemListener!=null){
+                    mOnClickLongDelItemListener.onItemDelClick(view,item,finalI);
+                }
             });
 
             //条目长按事件
@@ -278,7 +300,7 @@ public class MyFlowLayout extends ViewGroup {
         this.mOnClickItemListener = listener;
     }
 
-    public void OnClickLongDelItemListener(OnClickLongDelItemListener longListener) {
+    public void setOnClickLongDelItemListener(OnClickLongDelItemListener longListener) {
         this.mOnClickLongDelItemListener = longListener;
     }
     public interface OnClickItemListener {
@@ -401,5 +423,15 @@ public class MyFlowLayout extends ViewGroup {
      */
     public void setTextDrawableLeft(int textDrawableLeft) {
         this.textDrawableLeft = textDrawableLeft;
+    }
+
+    /**
+     * 设置条目的宽高 dp，不建议使用，会影响流式换行效果
+     * @param with
+     * @param height
+     */
+    public void setItemWithAndHeight(int with,int height){
+        itemWith = with;
+        itemHeight = height;
     }
 }
